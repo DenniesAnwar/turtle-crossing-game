@@ -15,13 +15,16 @@ class CarManager:
 
     def __init__(self):
         self.traffic = []
+        self.num_chance = 5
 
 
 
 
     def create_cars(self):
-        chance = random.randint(1,5)
+        chance = random.randint(1,self.num_chance)
         if chance == 1:
+            if self.num_chance == 2:
+                self.num_chance = 3
             car = Turtle("square")
             car.penup()
             ran_xcor = random.randint(-280,280)
@@ -44,7 +47,11 @@ class CarManager:
             car.goto(ran_xcor, ran_ycor)
             self.traffic.append(car)
 
-    def move_cars(self):
+    def move_cars(self, level):
         for car in self.traffic:
-            car.backward(STARTING_MOVE_DISTANCE)
+            speed = STARTING_MOVE_DISTANCE * level
+            car.backward(speed)
+
+
+
 
