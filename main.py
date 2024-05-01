@@ -26,7 +26,7 @@ while game_is_on:
     traffic.move_cars(scoreboard.level)
 
     for car in traffic.traffic:
-        if car.distance(player) < 20:
+        if car.distance(player) < 28:
             game_is_on = False
             scoreboard.game_over()
 

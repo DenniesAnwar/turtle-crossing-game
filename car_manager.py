@@ -29,7 +29,7 @@ class CarManager:
             car.penup()
             ran_xcor = random.randint(-280,280)
             ran_ycor = random.randint(-240, 260)
-            car.shapesize(stretch_wid=1, stretch_len=random.choice(CAR_SIZE_MULTIPLIER))
+            car.shapesize(stretch_wid=1, stretch_len=2)
             car.color(random.choice(COLORS))
             car.goto(300, ran_ycor)
             self.traffic.append(car)
